@@ -12,9 +12,11 @@ import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 import  dotenv from 'dotenv';
 dotenv.config();
 const router = express.Router();
-const client_id = process.env.SPOTIFY_CLIENT_ID; //spotify
+const client_id = process.env.SPOTIFY_CLIENT_ID || '04cc01e0d1034491bc40388761250cce'; //spotify
 
-const client_secret = process.env.SPOTIFY_CLIENT_SECRET;
+const client_secret =
+	process.env.SPOTIFY_CLIENT_SECRET ||
+	'5c456651e4674be49b150d74d8f5d0d7';
 
 const s3Client = new S3Client({
 	region: 'us-east-2',
