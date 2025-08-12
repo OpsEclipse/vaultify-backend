@@ -19,8 +19,11 @@ const client_secret = process.env.SPOTIFY_CLIENT_SECRET;
 const s3Client = new S3Client({
 	region: 'us-east-2',
 	credentials: {
-		accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-		secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+		accessKeyId:
+			process.env.AWS_ACCESS_KEY_ID || 'AKIA2UC4VYGII7JA6AJN',
+		secretAccessKey:
+			process.env.AWS_SECRET_ACCESS_KEY ||
+			'Q8vdhaFTgv7VGjVykCy0H9LiltJ1RVOzGenjJ',
 	},
 });
 
